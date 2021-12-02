@@ -11,3 +11,7 @@ edition = "2018"
 [[bin]]
 name = "1"
 path = "src/tasks/1.rs"
+
+[[bin]]
+name = "2"
+path = "src/tasks/2.rs"
