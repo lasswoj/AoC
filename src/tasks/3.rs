@@ -1,7 +1,5 @@
-use std::collections::LinkedList;
 use std::collections::VecDeque;
 use std::iter::FromIterator;
-use std::str::FromStr;
 use std::{fs, str::Split};
 
 struct PUsage {
@@ -17,8 +15,8 @@ impl PUsage {
         }
     }
     fn shift(&mut self) {
-        self.gamma = self.gamma << 1;
-        self.epsilon = self.epsilon << 1;
+        self.gamma <<= 1;
+        self.epsilon <<= 1;
     }
     fn count(&mut self, split: Split<&str>) {
         let vect: Vec<&str> = split.collect();
@@ -43,23 +41,16 @@ impl PUsage {
 }
 
 struct OUsage {
-    ox: u32,
-    co: u32,
-    ox2: String,
 }
 
 impl OUsage {
     fn new() -> OUsage {
-        OUsage {
-            ox: 0,
-            co: 0,
-            ox2: String::from_str("0").unwrap(),
-        }
+        OUsage {}
     }
     fn decode(code: &str) -> u16 {
         println!("code is {}", code);
         let mut vec = VecDeque::from_iter(code.chars());
-        let mut decoded:u16 = 0;
+        let mut decoded: u16 = 0;
         while vec.len() > 0 {
             decoded = decoded << 1;
             let char = vec.pop_front().unwrap() as u8 - '0' as u8;
@@ -124,12 +115,14 @@ fn main() {
     let split3 = split.clone();
     let mut pusage = PUsage::new();
     pusage.count(split);
-    print!("count power consumption :\n{}\n", pusage.gamma * pusage.epsilon);
+    print!(
+        "count power consumption :\n{}\n",
+        pusage.gamma * pusage.epsilon
+    );
     let mut ous = OUsage::new();
     let ox = ous.count_ox(split2);
     let co = ous.count_co(split3);
-    print!("count 2 :\n{}\n{}\n{}", ox, co, ox as u32*co as u32 );
-
+    print!("count 2 :\n{}\n{}\n{}", ox, co, ox as u32 * co as u32);
 }
 
 #[cfg(test)]
