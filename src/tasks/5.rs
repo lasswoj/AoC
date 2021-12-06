@@ -217,7 +217,7 @@ mod test {
     fn test_part1() {
         let contents =
             fs::read_to_string("resources/5t.txt").expect("Something went wrong reading the file");
-        let mut split = contents.split("\n");
+        let split = contents.split("\n");
         let pairs = destruct(split);
         let mut board = Board::new(&pairs);
         board.draw_board(&pairs);
@@ -228,7 +228,7 @@ mod test {
     fn test_part2() {
         let contents =
             fs::read_to_string("resources/5t.txt").expect("Something went wrong reading the file");
-        let mut split = contents.split("\n");
+        let split = contents.split("\n");
         let pairs = destruct(split);
         let mut board = Board::new(&pairs);
         board.draw_board_diag(&pairs);

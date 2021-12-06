@@ -142,8 +142,8 @@ mod test {
         let mut vals: VecDeque<u16> = vs.map(|s| s.parse().unwrap()).collect();
         let mut boards = create_boards(split);
         while boards.len() > 1 {
-            let res = flow(&mut boards, &mut vals);
+            let _ = flow(&mut boards, &mut vals);
         }
-        let res = flow(&mut boards, &mut vals);
+        let _ = flow(&mut boards, &mut vals);
     }
 }
