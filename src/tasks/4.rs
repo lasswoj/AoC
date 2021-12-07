@@ -74,12 +74,7 @@ impl Board {
 
 fn create_boards(mut split: Split<&str>) -> Vec<Board> {
     let mut boards: Vec<Board> = Vec::new();
-    while true {
-        let line = split.next();
-        match line {
-            None => break,
-            Some(_) => {}
-        }
+    while let Some(_) = split.next() {
         let mut grid: Vec<Vec<u16>> = Vec::new();
         for _ in 0..5 {
             let str = split.next().unwrap();

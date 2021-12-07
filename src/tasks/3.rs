@@ -40,8 +40,7 @@ impl PUsage {
     }
 }
 
-struct OUsage {
-}
+struct OUsage {}
 
 impl OUsage {
     fn new() -> OUsage {

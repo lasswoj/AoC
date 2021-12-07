@@ -31,3 +31,7 @@ path = "src/tasks/5.rs"
 [[bin]]
 name = "6"
 path = "src/tasks/6.rs"
+
+[[bin]]
+name = "7"
+path = "src/tasks/7.rs"
