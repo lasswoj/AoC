@@ -43,3 +43,15 @@ path = "src/tasks/8.rs"
 [[bin]]
 name = "9"
 path = "src/tasks/9.rs"
+
+[[bin]]
+name = "10"
+path = "src/tasks/10.rs"
+
+[[bin]]
+name = "11"
+path = "src/tasks/11.rs"
+
+[[bin]]
+name = "12"
+path = "src/tasks/12.rs"
